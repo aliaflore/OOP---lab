@@ -4,6 +4,15 @@
 #include <string.h>
 using namespace std ;
 
+int function ( char myString [ 100 ] )
+{
+	int n = 0 ;
+	for ( int i = 0 ; i < strlen ( myString ) ; i ++ )
+		if ( myString [ i ] != '\n' )
+			n = n * 10 + ( myString [ i ] - 48 ) ;
+	return n ;
+}
+
 int main ()
 {
     int n , suma = 0 ;
@@ -20,12 +29,7 @@ int main ()
 		char myString [ 200 ] ;
 		while ( fgets ( myString , 200 , fp ) != 0 )
 		{
-			myString [ strlen ( myString ) - 1 ] = '\0' ;
-			printf ( "%s\n" , myString ) ;
-			n = 0 ;
-			for ( int i = 0 ; i < strlen ( myString ) ; i ++ )
-				n = n * 10 + ( myString [ i ] - 48 );
-			printf ( "%d\n" , n ) ;
+			n = function ( myString ) ;
 			suma += n ;
 		}
 		printf ( "%d\n" , suma ) ;
