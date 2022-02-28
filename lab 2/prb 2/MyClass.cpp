@@ -28,28 +28,27 @@ void MyClass :: setName ( char numele [ 100 ] )
     strcpy ( this -> nume , numele ) ;
 }
 
-int MyClass :: getNota_Engleza ()
+float MyClass :: getNota_Engleza ()
 {
     return this -> nota_eng ;
 }
 
-int MyClass :: getNota_Istorie ()
+float MyClass :: getNota_Istorie ()
 {
     return this -> nota_istorie ;
 }
 
-int MyClass :: getNota_Mate ()
+float MyClass :: getNota_Mate ()
 {
     return this -> nota_mate ;
 }
 
 float MyClass :: average ()
 {
-    return ( this -> nota_eng + this -> nota_istorie + this -> nota_mate ) / 3 ;
+    return (float)( this -> nota_eng + this -> nota_istorie + this -> nota_mate ) / 3 ;
 }
 
-/*
-char MyClass :: getName ()
+char* MyClass :: getName ()
 {
     return this -> nume ;
-}*/
+}

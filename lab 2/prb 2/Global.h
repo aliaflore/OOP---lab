@@ -1,3 +1,4 @@
+#pragma once
 #include "MyClass.h"
 
 int compara_nume ( MyClass* e1 , MyClass* e2 ) ;
