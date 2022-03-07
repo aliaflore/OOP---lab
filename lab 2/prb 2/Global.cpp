@@ -41,7 +41,7 @@ int compara_average ( MyClass * e1, MyClass * e2 )
 		return 1 ;
 }
 
-int compara_numele ( MyClass * e1, MyClass * e2 ) 
+int compara_nume ( MyClass * e1, MyClass * e2 ) 
 {
 	if ( strcmp ( e1-> getName () , e2 -> getName () ) < 0 )
 		return -1 ;

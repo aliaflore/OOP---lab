@@ -36,7 +36,7 @@ int main ()
     cout << "average-ul este " << elev2.average () << endl ;
     cout << endl ;
 
-    ///cout << " Valoarea comparatiei dintre nume este " << compara_nume ( &elev1 , &elev2 ) ;
+    cout << " Valoarea comparatiei dintre nume este " << compara_nume ( &elev1 , &elev2 ) ;
     
     return 0 ;
 }
