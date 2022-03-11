@@ -28,8 +28,11 @@ int main ()
     ///c1 . Print () ;
 
     ///SET POINT
-    c1 . SetPoint ( 10 , 10 , '.' ) ;
-    c1 . Print () ;
+    ///c1 . SetPoint ( 10 , 10 , '.' ) ;
+    ///c1 . Print () ;
 
+    ///DRAW LINE 
+    c1.DrawLine ( 10 , 10 , 20 , 20 , '.' ) ;
+    c1.Print () ;
     return 0 ;
 }

@@ -76,3 +76,22 @@ void Canvas :: SetPoint ( int x , int y , char ch )
 {
     canvas [ x ] [ y ] = ch ;
 }
+
+void Canvas :: DrawLine ( int x1 , int y1 , int x2 , int y2 , char ch )
+{
+    int dx = x2 - x1 ;
+    int dy = y2 - y1 ;
+    int D = 2 * dy - dx ;
+    int y = y1 ;
+
+    for ( int i = 0 ; i < x1 ; i ++ )
+    {
+        canvas [ i ] [ y ] = ch ;
+        if ( D > 0 )
+        {
+            y = y + 1 ;
+            D = D - 2 * dx ;
+        }
+        D = D + 2 * dy ;
+    }
+}
