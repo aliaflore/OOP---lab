@@ -16,7 +16,7 @@ Canvas :: Canvas ( int latime , int inaltime )
         this -> latime = latime ;
         canvas = new char* [ latime ] () ;
         for ( int i = 0 ; i < latime  ; i++ )
-            canvas[i] = new char[ inaltime ] () ;
+            canvas[i] = new char [ inaltime ] () ;
         for ( int i = 0 ; i < latime ; i ++ )
             for ( int j = 0 ; j < inaltime ; j ++ )
                 canvas [ i ] [ j ] = ' ' ;
@@ -34,10 +34,45 @@ void Canvas :: Print ()
     }
 }
 
+void Canvas :: Clear ()
+{
+    for ( int i = 0 ; i < this -> latime ; i ++ )
+        for ( int j = 0 ; j < this -> inaltime ; j ++ )
+            canvas [ i ] [ j ] = ' ' ;
+}
+
 void Canvas :: DrawCircle ( int x , int y , int ray , char ch )
 {
     for ( int i = 0 ; i < this -> latime ; i ++ )
         for ( int j = 0 ; j < this -> inaltime ; j ++ )
         if ( ( i - x ) * ( i - x ) + ( j - y ) * ( j - y ) >= ( ray - 1 ) * ( ray - 1 ) && ( i - x ) * ( i - x ) + ( j - y ) * ( j - y ) <= ( ray - 1 ) * ( ray + 1 ) )
             canvas [ i ] [ j ] = ch ;
+}
+
+void Canvas :: FillCircle ( int x , int y , int ray , char ch )
+{
+    for ( int i = 0 ; i < this -> latime ; i ++ )
+        for ( int j = 0 ; j < this -> inaltime ; j ++ )
+        if ( ( i - x ) * ( i - x ) + ( j - y ) * ( j - y ) <= ray * ray )
+            canvas [ i ] [ j ] = ch ;
+}
+
+void  Canvas :: DrawRect ( int left, int top, int right, int bottom, char ch)
+{
+    for ( int i = top ; i < bottom ; i ++ )
+        for ( int j = left ; j < right ; j ++ )
+            if ( i == top or ( i == ( bottom - 1 ) ) or j == left or ( j == ( right - 1 ) ) )  
+                canvas [ i ] [ j ] = ch ;
+}
+
+void  Canvas :: FillRect ( int left , int top , int right , int bottom , char ch )
+{
+    for ( int i = top ; i < bottom ; i ++ )
+        for ( int j = left ; j < right ; j ++ )
+            canvas [ i ] [ j ] = ch ;
+}
+
+void Canvas :: SetPoint ( int x , int y , char ch ) 
+{
+    canvas [ x ] [ y ] = ch ;
 }
