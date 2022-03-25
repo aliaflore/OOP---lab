@@ -13,11 +13,28 @@ public:
 
    ~Number();
 
+    /// COPY CONSTRUCTOR
+    Number ( Number & d ) ;
 
+    /// MOVE CONSTRUCTOR
+    Number ( Number && d ) ;
 
-   // add operators and copy/move constructor
+    /// MOVE ASSIGNMENT OPERATOR
+    Number & operator = ( Number && d ) ;
+    Number & operator = ( char * p ) ;
+    Number & operator = ( int nr ) ;
 
-
+    /// OPERATORS
+    friend int operator + ( Number n1 , Number n2 ) ;
+    friend int operator - ( Number n1 , Number n2 ) ;
+    int operator [] ( int numar ) ;
+    bool operator > ( const Number &n ) ;
+    bool operator < ( const Number &n ) ;
+    bool operator <= ( const Number &n ) ;
+    bool operator >= ( const Number &n ) ;
+    bool operator == ( const Number &n ) ;
+    Number operator -- () ;
+    Number operator -- ( int n ) ;
 
    void SwitchBase(int newBase);
 
