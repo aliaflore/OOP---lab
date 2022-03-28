@@ -25,8 +25,8 @@ public:
     Number & operator = ( int nr ) ;
 
     /// OPERATORS
-    friend int operator + ( Number n1 , Number n2 ) ;
-    friend int operator - ( Number n1 , Number n2 ) ;
+    friend Number operator + ( Number n1 , Number n2 ) ;
+    friend Number operator - ( Number n1 , Number n2 ) ;
     int operator [] ( int numar ) ;
     bool operator > ( const Number &n ) ;
     bool operator < ( const Number &n ) ;

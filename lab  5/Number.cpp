@@ -87,12 +87,14 @@ Number & Number :: operator = ( int nr )
         copie = nr / n ;
         this -> val [ i ] = ( char ) ( copie + 48 ) ;
         nr %= n ;
+        i ++ ;
     }
+    this -> val [ i ] = 0 ;
     return * this ;
 }
 
 /// +
-int operator + ( Number n1 , Number n2 )
+Number operator + ( Number n1 , Number n2 )
 {
     int numar_1 = 0 ;
     int numar_2 = 0 ;
@@ -108,11 +110,27 @@ int operator + ( Number n1 , Number n2 )
         numar_2 += (  ( n2 . val [ i ] - 48 ) * pow ( n2 . baza , putere ) ) ;
         putere ++ ;
     }
-    return numar_1 + numar_2 ;
+    int cp , nrcif = 0 , suma = numar_1 + numar_2 ;
+    /// calculez cate cifre are 
+    cp = suma ;
+    while ( cp != 0 )
+        nrcif ++ , cp /= 10 ;
+    /// in nrcif am stocat cate cifre am in suma
+    char nr [ 100 ] ;
+    nr [ nrcif ] = 0 ;
+    nrcif -- ;
+    while ( suma != 0 )
+    {
+        nr [ nrcif ] = ( char ) ( suma % 10 + 48 ) ; 
+        nrcif -- ;
+        suma /= 10 ;
+    }
+    Number n ( nr , 10 ) ;
+    return n ;
 }
 
 /// - 
-int operator - ( Number n1 , Number n2 )
+Number operator - ( Number n1 , Number n2 )
 {
     int numar_1 = 0 ;
     int numar_2 = 0 ;
@@ -128,7 +146,23 @@ int operator - ( Number n1 , Number n2 )
         numar_2 += (  ( n2 . val [ i ] - 48 ) * pow ( n2 . baza , putere ) ) ;
         putere ++ ;
     }
-    return numar_1 - numar_2 ;
+    int cp , nrcif = 0 , diferenta = numar_1 - numar_2 ;
+    /// calculez cate cifre are 
+    cp = diferenta ;
+    while ( cp != 0 )
+        nrcif ++ , cp /= 10 ;
+    /// in nrcif am stocat cate cifre am in suma
+    char nr [ 100 ] ;
+    nr [ nrcif ] = 0 ;
+    nrcif -- ;
+    while ( diferenta != 0 )
+    {
+        nr [ nrcif ] = ( char ) ( diferenta % 10 + 48 ) ; 
+        nrcif -- ;
+        diferenta /= 10 ;
+    }
+    Number n ( nr , 10 ) ;
+    return n ;
 }
 
 /// []
