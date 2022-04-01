@@ -1,31 +1,25 @@
 #include "Dacia.h"
 
-int Dacia :: fuel_capacity ()
+Dacia :: Dacia ()
 {
-    return 250 ;
+    this -> fuel_capacity ;
+    this -> fuel_consumption ;
+    this -> average_speed [ 0 ] = 10 ;
+    this -> average_speed [ 1 ] = 20 ; 
+    this -> average_speed [ 2 ] = 5 ;   
+    this -> name = ( char * ) "Dacia" ;
 }
 
-int Dacia :: fuel_consumption ()
+char * Dacia :: numele () 
 {
-    return 10 ;
+    return this -> name ;
 }
 
-int Dacia :: average_speed ( Weather x )
+float Dacia :: viteza_medie ( int x , int y )
 {
-    switch ( x )
-    {
-    case Weather :: rain :
-        return 50 ;
-    case Weather :: sunny :
-        return 170 ;
-    case Weather :: snow :
-        return 30 ;
-    default :
-        break ;
-    }
-}
-
-const char * Dacia :: name ()
-{
-    return "Dacia" ;
-}
+    /// viteza = distanta / timp 
+    /// distanta = viteza * timp 
+    float timp = this -> fuel_capacity / this -> fuel_consumption ;
+    float distanta = timp * this -> average_speed [ x ] ;
+    return ( timp * y ) / distanta ;
+} 

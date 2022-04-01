@@ -1,31 +1,27 @@
 #include "Toyota.h"
 
-int Toyota :: fuel_capacity ()
+Toyota :: Toyota ()
 {
-    return 215 ;
+    this -> fuel_capacity ;
+    this -> fuel_consumption ;
+    this -> average_speed [ 0 ] = 10 ;
+    this -> average_speed [ 1 ] = 20 ; 
+    this -> average_speed [ 2 ] = 5 ;  
+    this -> name = ( char * ) "Toyota" ;
 }
 
-int Toyota :: fuel_consumption ()
+
+char * Toyota :: numele () 
 {
-    return 9 ;
+    return this -> name ;
 }
 
-int Toyota :: average_speed ( Weather x )
-{
-    switch ( x )
-    {
-    case Weather :: rain :
-        return 50 ;
-    case Weather :: sunny :
-        return 170 ;
-    case Weather :: snow :
-        return 30 ;
-    default :
-        break ;
-    }
-}
 
-const char * Toyota :: name ()
+float Toyota :: viteza_medie ( int x , int y )
 {
-    return "Toyota" ;
-}
+    /// viteza = distanta / timp 
+    /// distanta = viteza * timp 
+    float timp = this -> fuel_capacity / this -> fuel_consumption ;
+    float distanta = timp * this -> average_speed [ x ] ;
+    return ( timp * y ) / distanta ;
+} 

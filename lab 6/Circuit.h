@@ -20,6 +20,7 @@ protected:
     int index_maxim ;
     int index_ceicareauterminat ;
     int index_nu ;
+    int w , l ;
 public:
     Circuit () ;
     ~Circuit () ;
@@ -29,5 +30,5 @@ public:
     void ShowFinalRanks () ;
     void ShowWhoDidNotFinish () ;
     void SetLength ( int x );
-    void SetWeather ( int x ) ;
+    void SetWeather ( Weather x ) ;
 } ;

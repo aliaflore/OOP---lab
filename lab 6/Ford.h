@@ -3,8 +3,9 @@
 
 class Ford : public Car 
 {
-    int fuel_capacity () ;
-    int fuel_consumption () ;
-    int average_speed ( Weather x ) ;
-    const char * name () ;
+
+public:
+    Ford () ;
+    char * numele () ;
+    float viteza_medie ( int x , int y ) ;
 };

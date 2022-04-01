@@ -4,9 +4,12 @@
 
 class Car
 {
+protected:
+    int fuel_capacity ;
+    int fuel_consumption ;
+    int average_speed [ 3 ] ;
+    char * name ;
 public:
-    virtual int fuel_capacity () = 0 ;
-    virtual int fuel_consumption () = 0 ;
-    virtual int average_speed ( Weather x ) = 0 ;
-    virtual const char * name () const = 0 ;
+    virtual char * numele () = 0 ;
+    virtual float viteza_medie ( int x , int y ) ;
 };
